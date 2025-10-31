@@ -1,0 +1,107 @@
+{
+  "manifest_version": "0.2",
+  "name": "functionhealth-mcpb",
+  "display_name": "Function Health (Unofficial)",
+  "version": "1.0.0",
+  "description": "Claude Desktop Extension for Function Health (Unofficial), the health biomarker tracking and wellness platform",
+  "long_description": "This extension provides seamless integration between Claude Desktop and Function Health. Access your biomarker test results, track health metrics from wearable devices, and analyze trends over time directly from Claude conversations. View detailed biomarker data including optimal ranges, historical results, and category information. Monitor daily health metrics like calories, steps, sleep, and heart rate. This is an unofficial extension and is not affiliated with or endorsed by Function Health.",
+  "author": {
+    "name": "Matt McCormick",
+    "email": "matt@mbmccormick.com",
+    "url": "https://github.com/mbmccormick"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbmccormick/functionhealth-mcpb.git"
+  },
+  "homepage": "https://github.com/mbmccormick/functionhealth-mcpb",
+  "documentation": "https://github.com/mbmccormick/functionhealth-mcpb/blob/main/README.md",
+  "support": "https://github.com/mbmccormick/functionhealth-mcpb/issues",
+  "icon": "icon.png",
+  "license": "MIT",
+  "keywords": [
+    "health",
+    "biomarkers",
+    "function-health",
+    "wellness",
+    "health-tracking",
+    "wearables"
+  ],
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": [
+      "darwin",
+      "linux",
+      "win32"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "tools_generated": true,
+  "user_config": {
+    "FUNCTION_HEALTH_EMAIL": {
+      "type": "string",
+      "title": "Function Health Email",
+      "description": "Your Function Health account email address",
+      "sensitive": false,
+      "required": true
+    },
+    "FUNCTION_HEALTH_PASSWORD": {
+      "type": "string",
+      "title": "Function Health Password",
+      "description": "Your Function Health account password",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ],
+      "env": {
+        "FUNCTION_HEALTH_EMAIL": "${user_config.FUNCTION_HEALTH_EMAIL}",
+        "FUNCTION_HEALTH_PASSWORD": "${user_config.FUNCTION_HEALTH_PASSWORD}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "get_health_data",
+      "description": "Get comprehensive health data including biomarker test results (blood test values, optimal ranges, historical data, trends) and wearable metrics (activity, sleep, calories, heart rate, and other daily measurements)"
+    },
+    {
+      "name": "get_requisitions",
+      "description": "Get list of lab test requisitions with detailed visit and biomarker data"
+    },
+    {
+      "name": "get_results",
+      "description": "Get list of lab test results with detailed visit information and biomarker measurements"
+    },
+    {
+      "name": "download_requisition",
+      "description": "Download a lab requisition PDF report using the report path from get_requisitions"
+    }
+  ],
+  "prompts": [
+    {
+      "name": "health_overview",
+      "description": "Get a complete overview of your health data",
+      "text": "Show me a complete overview of my health data, including biomarker test results and wearable metrics. Highlight any values that are out of range or showing concerning trends."
+    },
+    {
+      "name": "view_lab_results",
+      "description": "View recent lab results and reports",
+      "text": "Use the get_results tool to show me my recent lab results with detailed visit information and biomarker measurements."
+    },
+    {
+      "name": "review_requisitions",
+      "description": "Review lab test requisitions and available PDFs",
+      "text": "Use the get_requisitions tool to show me my lab test requisitions. Then help me access any available PDF reports using the download_requisition tool."
+    }
+  ]
+}

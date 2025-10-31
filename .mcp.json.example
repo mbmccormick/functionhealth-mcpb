@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "functionhealth-mcpb": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "/path/to/functionhealth-mcpb/server/index.js"
+      ],
+      "env": {
+        "FUNCTION_HEALTH_EMAIL": "your-email@example.com",
+        "FUNCTION_HEALTH_PASSWORD": "your-password"
+      }
+    }
+  }
+}

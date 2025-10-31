@@ -1,0 +1,46 @@
+{
+  "name": "functionhealth-mcpb",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Claude Desktop Extension for Function Health (Unofficial), the health biomarker tracking and wellness platform",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "DEBUG=true node server/index.js",
+    "package": "mcpb pack .",
+    "validate": "node -c server/index.js && node -c server/utils.js && node -c server/tool-definitions.js && node -c server/server-config.js && node -c server/functionhealth-client.js && node -c server/response-formatter.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbmccormick/functionhealth-mcpb.git"
+  },
+  "homepage": "https://github.com/mbmccormick/functionhealth-mcpb",
+  "bugs": {
+    "url": "https://github.com/mbmccormick/functionhealth-mcpb/issues"
+  },
+  "author": {
+    "name": "Matt McCormick",
+    "email": "matt@mbmccormick.com",
+    "url": "https://github.com/mbmccormick"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude",
+    "desktop",
+    "extension",
+    "function-health",
+    "health",
+    "biomarkers",
+    "wellness",
+    "health-tracking"
+  ],
+  "devDependencies": {
+    "@anthropic-ai/mcpb": "1.0.0"
+  }
+}
