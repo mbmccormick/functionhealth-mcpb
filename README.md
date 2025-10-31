@@ -1,4 +1,4 @@
-# Function Health MCP Bridge (Unofficial)
+# Function Health (Unofficial) - Claude Desktop Extension
 
 Claude Desktop Extension for [Function Health](https://functionhealth.com), the health biomarker tracking and wellness platform.
 
