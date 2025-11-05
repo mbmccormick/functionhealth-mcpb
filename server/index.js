@@ -17,7 +17,7 @@ import {
 
 import { TOOL_DEFINITIONS } from "./tool-definitions.js";
 import { FunctionHealthClient } from "./functionhealth-client.js";
-import { FunctionHealthLogger } from "./utils.js";
+import { FunctionHealthLogger, ParameterProcessor } from "./utils.js";
 import { SERVER_CONFIG } from "./server-config.js";
 import { formatHealthData, formatRequisitions, formatResults } from "./response-formatter.js";
 
@@ -67,8 +67,11 @@ class FunctionHealthServer {
       const { name, arguments: args } = request.params;
 
       try {
+        // Process parameters for consistency and validation
+        const processedArgs = ParameterProcessor.process(args || {});
+
         // Execute the tool
-        const result = await this.executeTool(name, args || {});
+        const result = await this.executeTool(name, processedArgs);
 
         return {
           content: [

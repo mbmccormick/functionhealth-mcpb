@@ -14,7 +14,8 @@ export const TOOL_DEFINITIONS = [
     inputSchema: {
       type: "object",
       properties: {}
-    }
+    },
+    readOnlyHint: true
   },
 
   // ============================================================
@@ -26,7 +27,8 @@ export const TOOL_DEFINITIONS = [
     inputSchema: {
       type: "object",
       properties: {}
-    }
+    },
+    readOnlyHint: true
   },
 
   // ============================================================
@@ -38,7 +40,8 @@ export const TOOL_DEFINITIONS = [
     inputSchema: {
       type: "object",
       properties: {}
-    }
+    },
+    readOnlyHint: true
   },
 
   // ============================================================
@@ -56,6 +59,7 @@ export const TOOL_DEFINITIONS = [
         }
       },
       required: ["url"]
-    }
+    },
+    readOnlyHint: true
   }
 ];

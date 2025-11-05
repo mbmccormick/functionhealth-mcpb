@@ -1,6 +1,6 @@
 {
   "name": "functionhealth-mcpb",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "Claude Desktop Extension for Function Health (Unofficial), the health biomarker tracking and wellness platform",
   "main": "server/index.js",
@@ -41,6 +41,6 @@
     "health-tracking"
   ],
   "devDependencies": {
-    "@anthropic-ai/mcpb": "1.0.0"
+    "@anthropic-ai/mcpb": "^2.0.1"
   }
 }
