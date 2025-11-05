@@ -1,8 +1,8 @@
 {
-  "manifest_version": "0.3",
+  "manifest_version": "0.2",
   "name": "functionhealth-mcpb",
   "display_name": "Function Health (Unofficial)",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Claude Desktop Extension for Function Health (Unofficial), the health biomarker tracking and wellness platform",
   "long_description": "This extension provides seamless integration between Claude Desktop and Function Health. Access your biomarker test results, track health metrics from wearable devices, and analyze trends over time directly from Claude conversations. View detailed biomarker data including optimal ranges, historical results, and category information. Monitor daily health metrics like calories, steps, sleep, and heart rate. This is an unofficial extension and is not affiliated with or endorsed by Function Health.",
   "author": {
